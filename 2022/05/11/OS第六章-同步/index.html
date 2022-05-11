@@ -7,7 +7,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg">
 <meta property="article:published_time" content="2022-05-11T02:32:26.000Z">
-<meta property="article:modified_time" content="2022-05-11T16:51:41.127Z">
+<meta property="article:modified_time" content="2022-05-11T17:01:17.491Z">
 <meta property="article:author" content="Jasonzzt">
 <meta property="article:tag" content="复习">
 <meta property="article:tag" content="操作系统">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-05-12 00:51:41'
+  postUpdate: '2022-05-12 01:01:17'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,7 +143,7 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.whhost.net/tu/202101/TX9522_15.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jasonzzt个人博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OS第六章-同步</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-11T02:32:26.000Z" title="Created 2022-05-11 10:32:26">2022-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-05-11T16:51:41.127Z" title="Updated 2022-05-12 00:51:41">2022-05-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OS第六章-同步"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h1><h2 id="为什么引入进程同步概念？"><a href="#为什么引入进程同步概念？" class="headerlink" title="为什么引入进程同步概念？"></a>为什么引入进程同步概念？</h2><ul>
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.whhost.net/tu/202101/TX9522_15.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jasonzzt个人博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OS第六章-同步</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-11T02:32:26.000Z" title="Created 2022-05-11 10:32:26">2022-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-05-11T17:01:17.491Z" title="Updated 2022-05-12 01:01:17">2022-05-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OS第六章-同步"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h1><h2 id="为什么引入进程同步概念？"><a href="#为什么引入进程同步概念？" class="headerlink" title="为什么引入进程同步概念？"></a>为什么引入进程同步概念？</h2><ul>
 <li><p>进程（或线程）能够并发执行，但是可能在任何时候被中断，部分完成执行。</p>
 </li>
 <li><p>对共享数据的并发访问可能会导致数据不一致，维护数据一致性需要能偶确保数据有序运行的机制</p>
@@ -177,7 +177,7 @@
 <ul>
 <li>进入临界区之前，进程接收一个数字</li>
 <li>得到的数字最小的进入临界区</li>
-<li>如果进程$P_i$和$P_j$收到相同的数字，那么如果$i&lt;j$，$P_i$先进入临界区，否则$P_j$先进入临界区</li>
+<li>如果进程$P_i$和$P_j$收到相同的数字，那么如果i&lt;j，$P_i$先进入临界区，否则$P_j$先进入临界区</li>
 <li>编号方案总是按照枚举的增加顺序生成数字</li>
 </ul>
 <h4 id="软件解决方案总结"><a href="#软件解决方案总结" class="headerlink" title="软件解决方案总结"></a>软件解决方案总结</h4><p> 复杂：需要两个进程间的共享数据项</p>
