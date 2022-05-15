@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>os第五章-调度 | Jasonzzt个人博客</title><meta name="keywords" content="复习,操作系统"><meta name="author" content="Jasonzzt"><meta name="copyright" content="Jasonzzt"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="为什么进行系统调度？当有一堆任务要处理，但由于资源有限，这些事情没法同时处理，这就需要确定某种规则来决定处理这些任务的顺序，这就是调度研究的问题。 处理机调度是多道程序操作系统的基础，是操作系统设计的核心问题。 调度的三个层次进程调度(Short-time scheduler)低级调度的主要任务是按照某种方法和策略从就绪队列中选取一个进程，将CPU分配给他。进程调度是OS最基本的一种调度，调度频率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="os第五章-调度">
+<meta property="og:url" content="https://jasonzzt.github.io/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/index.html">
+<meta property="og:site_name" content="Jasonzzt个人博客">
+<meta property="og:description" content="为什么进行系统调度？当有一堆任务要处理，但由于资源有限，这些事情没法同时处理，这就需要确定某种规则来决定处理这些任务的顺序，这就是调度研究的问题。 处理机调度是多道程序操作系统的基础，是操作系统设计的核心问题。 调度的三个层次进程调度(Short-time scheduler)低级调度的主要任务是按照某种方法和策略从就绪队列中选取一个进程，将CPU分配给他。进程调度是OS最基本的一种调度，调度频率">
+<meta property="og:locale">
+<meta property="og:image" content="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg">
+<meta property="article:published_time" content="2022-05-13T07:56:36.000Z">
+<meta property="article:modified_time" content="2022-05-15T04:07:43.043Z">
+<meta property="article:author" content="Jasonzzt">
+<meta property="article:tag" content="复习">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jasonzzt.github.io/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'os第五章-调度',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-15 12:07:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.whhost.net/tu/202101/TX9522_15.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jasonzzt个人博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">os第五章-调度</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-13T07:56:36.000Z" title="Created 2022-05-13 15:56:36">2022-05-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-05-15T04:07:43.043Z" title="Updated 2022-05-15 12:07:43">2022-05-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="os第五章-调度"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="为什么进行系统调度？"><a href="#为什么进行系统调度？" class="headerlink" title="为什么进行系统调度？"></a>为什么进行系统调度？</h1><p><strong>当有一堆任务要处理，但由于资源有限，这些事情没法同时处理，这就需要确定某种规则来决定处理这些任务的顺序，这就是调度研究的问题。</strong></p>
+<p><strong>处理机调度是多道程序操作系统的基础，是操作系统设计的核心问题。</strong></p>
+<h1 id="调度的三个层次"><a href="#调度的三个层次" class="headerlink" title="调度的三个层次"></a>调度的三个层次</h1><h2 id="进程调度-Short-time-scheduler"><a href="#进程调度-Short-time-scheduler" class="headerlink" title="进程调度(Short-time scheduler)"></a>进程调度(Short-time scheduler)</h2><p><strong>低级调度的主要任务是按照某种方法和策略从就绪队列中选取一个进程，将CPU分配给他。进程调度是OS最基本的一种调度，调度频率很高，一般几十毫秒一次。</strong></p>
+<p><strong>低级调度对进程状态的影响：就绪态——&gt;运行态</strong></p>
+<p><strong>调度延迟：调度机停止一个进程并开启另一个进程所花费的时间。</strong></p>
+<h2 id="内存调度"><a href="#内存调度" class="headerlink" title="内存调度"></a>内存调度</h2><p><strong>引入虚拟存储技术后，可将暂时不能运行的进程调至外存等待，等他重新具备了运行条件且内存又稍有空闲时，再重新调入内存。这么做是为了提高系统利用率和吞吐量。暂时调到外存等待的进程状态称为挂起状态。值得注意的是，PCB并不会一起调到外存，而是会常驻内存</strong></p>
+<p><strong>中级调度（内存调度）就是要决定将哪个处于挂起状态的进程重新调入内存</strong></p>
+<p><strong>挂起状态又可分为就绪挂起和阻塞挂起</strong></p>
+<p><strong>中级调度对进程状态的影响：挂起态—–&gt;就绪态</strong></p>
+<h2 id="作业调度"><a href="#作业调度" class="headerlink" title="作业调度"></a>作业调度</h2><p><strong>高级调度按一定的原则从外存上处于后备队列的作业中挑选一个或多个作业，给他们分配内存等必要资源，并建立相应的进程（建立PCB），以使他们获得竞争处理机的权利。是内存与外存之间的调度。</strong></p>
+<p><strong>高级调度对进程状态的影响：无—&gt;创建态—–&gt;就绪态</strong></p>
+<hr>
+<h1 id="调度的时机"><a href="#调度的时机" class="headerlink" title="调度的时机"></a>调度的时机</h1><p><strong>CPU调度可能会在以下情景发生：</strong></p>
+<p>1.进程从运行态——&gt;挂起态</p>
+<p>2.进程从运行态——&gt;就绪态</p>
+<p>3.进程从挂起态——&gt;就绪态</p>
+<p>4.进程终止</p>
+<p><strong>其中，1和4是非抢占式的(nonpreemptive)，2和3是抢占式的(preemptive)。</strong></p>
+<p><strong>非抢占式的调度(主动放弃)包含：</strong></p>
+<p>进程正常终止、运行过程发生异常而终止、进程主动请求堵塞(如 等待I&#x2F;O)</p>
+<p><strong>抢占式的调度(被动放弃)包含：</strong></p>
+<p>有更高优先级的进程进入就绪状态、分给进程的时间片用完、有更紧急的事需要处理(如 I&#x2F;O中断)</p>
+<p><strong>不能进行进程调度与切换的情况：</strong></p>
+<ul>
+<li>在原子操作过程中（原语），原子操作不可中断，要一气呵成。</li>
+<li>在处理中断时。中断处理过程复杂，很难做到进程切换</li>
+<li>进程在OS内核程序临界区中</li>
+</ul>
+<hr>
+<h1 id="调度算法的评价标准"><a href="#调度算法的评价标准" class="headerlink" title="调度算法的评价标准"></a>调度算法的评价标准</h1><p><strong>1. CPU利用率(utilization)&#x3D;忙碌的时间&#x2F;总时间</strong></p>
+<p><strong>2. 系统吞吐量(Throughput):单位时间内完成作业的数量&#x3D;总共完成了多少道作业&#x2F;完成作业的时间</strong></p>
+<p><strong>3. 周转时间(Turnaround time):T_turnaround&#x3D; T_completion - T_arrival</strong></p>
+<p><strong>4. 等待时间(Waiting time):进程在就绪队列中总的等待时间&#x3D;T_turnaround - T_total</strong></p>
+<p>​      (若有I&#x2F;O操作，T_total &#x3D; 运行时间 + I&#x2F;O操作时间)</p>
+<p><strong>5. 响应时间(Response time):进程进入就绪队列到第一次被执行所用时间</strong></p>
+<hr>
+<h1 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h1><h2 id="FCFS-先来先服务）"><a href="#FCFS-先来先服务）" class="headerlink" title="FCFS(先来先服务）"></a>FCFS(先来先服务）</h2><p><strong>（1）主要从公平的角度考虑，按照作业&#x2F;进程到达先后顺序进行服务</strong><br><strong>（2）非抢占式</strong><br><strong>（3）优点：公平，算法实现简单</strong><br><strong>（4）缺点：排在长进程&#x2F;作业后的短进程需要等待很长时间，带权周转时间很大，对短作业来说体验不好。</strong></p>
+<h2 id="SJF-短作业优先"><a href="#SJF-短作业优先" class="headerlink" title="SJF(短作业优先)"></a>SJF(短作业优先)</h2><p><strong>（1）追求最少的平均等待时间、最少的平均周转时间</strong><br><strong>（2）最短的作业&#x2F;进程优先得到服务（最短是指服务时间最短）</strong><br><strong>（3）SPF是非抢占式算法，但也有抢占式版本——最短剩余时间优先，SRNT算法</strong><br><strong>（4）优点：“最短的”（这个最短是有前提的，下面有提到）平均等待时间、平均周转时间</strong><br><strong>（5）缺点：不公平。对短作业有利，长作业不利，可能产生饥饿现象</strong></p>
+<p><strong>在所有进程可同时运行时（或在所有进程几乎都同时到达时），采用SJF算法的平均等待时间、平均周转时间最少</strong></p>
+<h2 id="Priority-优先级调度"><a href="#Priority-优先级调度" class="headerlink" title="Priority(优先级调度)"></a>Priority(优先级调度)</h2><p>SJF是一个优先级调度算法的特例。</p>
+<p><strong>（1）算法思想：越来越多的应用场景需要根据任务的紧急程度来决定处理顺序</strong><br><strong>（2）每个作业&#x2F;进程有各自的优先级，调度时选择优先级最高的作业&#x2F;进程</strong><br><strong>（3）即可用于作业调度，也可用于进程调度</strong><br><strong>（4）抢占、非抢占式都有</strong></p>
+<p><strong>（5）缺点：产生饥饿 解决方法：Aging——随着时间推进提高优先级</strong></p>
+<h2 id="HRRN-高响应比优先"><a href="#HRRN-高响应比优先" class="headerlink" title="HRRN(高响应比优先)"></a>HRRN(高响应比优先)</h2><p><strong>（1）要综合考虑作业&#x2F;进程的等待时间和执行时间<br>（2）每次调度时先计算各个作业的响应比，选择响应比最高的进程为其服务<br>（3）非抢占式</strong></p>
+<p><img src="/../../images/os4.png" alt="在这里插入图片描述"></p>
+<h2 id="RR-时间片轮转"><a href="#RR-时间片轮转" class="headerlink" title="RR(时间片轮转)"></a>RR(时间片轮转)</h2><p><strong>（1）公平的、轮流的为各个进程服务，让每个进程在一定时间间隔内都可以得到响应。按照各进程到达就绪队列的顺序，轮流让各个进程执行一个时间片<br>（2）用于进程调度（只有作业放入内存建立相应的进程后，才能被分配处理机时间片）<br>（3）轮流让就绪队列中的进程一次执行一个时间片（每次选择排在就绪队列队头的进程）<br>（4）如果时间片太大，使得每个进程都可以在一个时间片内就完成，则RR算法退化为FCFS算法，并且会增大进程响应时间<br>（5）优点：公平，响应快，让各个进程得到及时的响应；缺点：不区分任务的紧急程度</strong></p>
+<h2 id="MLFQ-多级反馈队列调度"><a href="#MLFQ-多级反馈队列调度" class="headerlink" title="MLFQ(多级反馈队列调度)"></a>MLFQ(多级反馈队列调度)</h2><ul>
+<li><strong>优化周转时间</strong></li>
+<li><strong>最小化响应时间</strong></li>
+</ul>
+<p><img src="/../../images/os5.png" alt="在这里插入图片描述"></p>
+<p><strong>（1）对其他调度算法的折中权衡</strong><br><strong>（2）设置多级就绪队列，各级队列优先级从高到低，时间片从小到大</strong><br><strong>（3）新景程到达时先进入第1级队列，按FCFS原则排队等待被分配时间片，若用完时间片进程还未  结束，则进程进入下一级队列队尾</strong><br><strong>（4）只有第k级队列为空时，才会为k+1级队头的进程分配时间片</strong><br><strong>（5）抢占式算法</strong><br><strong>（6）用于进程调度</strong></p>
+<hr>
+<h1 id="多处理器调度"><a href="#多处理器调度" class="headerlink" title="多处理器调度"></a>多处理器调度</h1><p><strong>Asymmetric Multiprocessing——single-queue multiprocessor scheduling(SQMS)</strong></p>
+<p>非对称多处理</p>
+<p><strong>Symmetric Multiprocessing——multi-queue multiprocessor scheduling(MQMS)</strong><br>对称多处理</p>
+<hr>
+<h1 id="实时CPU调度-根据实时任务性质分类"><a href="#实时CPU调度-根据实时任务性质分类" class="headerlink" title="实时CPU调度(根据实时任务性质分类)"></a>实时CPU调度(根据实时任务性质分类)</h1><p><strong>软实时系统</strong></p>
+<p>即大部分任务必须在确定的时间内完成</p>
+<p><strong>硬实时系统</strong></p>
+<p>即任务必须在确定的时间内完成</p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://Jasonzzt.github.io">Jasonzzt</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://jasonzzt.github.io/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/">https://jasonzzt.github.io/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0/">复习</a><a class="post-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></div><div class="post_share"><div class="social-share" data-image="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/12/python%E8%A7%A3%E6%9E%90JSON%E6%96%87%E4%BB%B6/"><img class="next-cover" src="https://img1.baidu.com/it/u=1807166483,1107331951&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=641&amp;h=401" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">python解析JSON文件</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/05/11/OS%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%90%8C%E6%AD%A5/" title="OS第六章-同步"><img class="cover" src="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-11</div><div class="title">OS第六章-同步</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.whhost.net/tu/202101/TX9522_15.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jasonzzt</div><div class="author-info__description">共享个人项目、刷题经验、课程资源等</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Jasonzzt/Jasonzzt.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1273302566@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9B%E8%A1%8C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么进行系统调度？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E7%9A%84%E4%B8%89%E4%B8%AA%E5%B1%82%E6%AC%A1"><span class="toc-number">2.</span> <span class="toc-text">调度的三个层次</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6-Short-time-scheduler"><span class="toc-number">2.1.</span> <span class="toc-text">进程调度(Short-time scheduler)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E8%B0%83%E5%BA%A6"><span class="toc-number">2.2.</span> <span class="toc-text">内存调度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6"><span class="toc-number">2.3.</span> <span class="toc-text">作业调度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA"><span class="toc-number">3.</span> <span class="toc-text">调度的时机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%A0%87%E5%87%86"><span class="toc-number">4.</span> <span class="toc-text">调度算法的评价标准</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#FCFS-%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">FCFS(先来先服务）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SJF-%E7%9F%AD%E4%BD%9C%E4%B8%9A%E4%BC%98%E5%85%88"><span class="toc-number">5.2.</span> <span class="toc-text">SJF(短作业优先)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Priority-%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="toc-number">5.3.</span> <span class="toc-text">Priority(优先级调度)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HRRN-%E9%AB%98%E5%93%8D%E5%BA%94%E6%AF%94%E4%BC%98%E5%85%88"><span class="toc-number">5.4.</span> <span class="toc-text">HRRN(高响应比优先)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RR-%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC"><span class="toc-number">5.5.</span> <span class="toc-text">RR(时间片轮转)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MLFQ-%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97%E8%B0%83%E5%BA%A6"><span class="toc-number">5.6.</span> <span class="toc-text">MLFQ(多级反馈队列调度)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6"><span class="toc-number">6.</span> <span class="toc-text">多处理器调度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6CPU%E8%B0%83%E5%BA%A6-%E6%A0%B9%E6%8D%AE%E5%AE%9E%E6%97%B6%E4%BB%BB%E5%8A%A1%E6%80%A7%E8%B4%A8%E5%88%86%E7%B1%BB"><span class="toc-number">7.</span> <span class="toc-text">实时CPU调度(根据实时任务性质分类)</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/" title="os第五章-调度"><img src="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="os第五章-调度"/></a><div class="content"><a class="title" href="/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/" title="os第五章-调度">os第五章-调度</a><time datetime="2022-05-13T07:56:36.000Z" title="Created 2022-05-13 15:56:36">2022-05-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/12/python%E8%A7%A3%E6%9E%90JSON%E6%96%87%E4%BB%B6/" title="python解析JSON文件"><img src="https://img1.baidu.com/it/u=1807166483,1107331951&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=641&amp;h=401" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python解析JSON文件"/></a><div class="content"><a class="title" href="/2022/05/12/python%E8%A7%A3%E6%9E%90JSON%E6%96%87%E4%BB%B6/" title="python解析JSON文件">python解析JSON文件</a><time datetime="2022-05-12T15:30:22.000Z" title="Created 2022-05-12 23:30:22">2022-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/OS%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%90%8C%E6%AD%A5/" title="OS第六章-同步"><img src="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS第六章-同步"/></a><div class="content"><a class="title" href="/2022/05/11/OS%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%90%8C%E6%AD%A5/" title="OS第六章-同步">OS第六章-同步</a><time datetime="2022-05-11T02:32:26.000Z" title="Created 2022-05-11 10:32:26">2022-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/%E5%BC%80%E4%B8%9A%E5%A4%A7%E5%90%89/" title="开门大吉"><img src="https://bpic.588ku.com/back_origin_min_pic/21/03/15/a63ef543b9c55f0e33fd75b71cef0c12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开门大吉"/></a><div class="content"><a class="title" href="/2022/05/11/%E5%BC%80%E4%B8%9A%E5%A4%A7%E5%90%89/" title="开门大吉">开门大吉</a><time datetime="2022-05-10T17:27:43.000Z" title="Created 2022-05-11 01:27:43">2022-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jasonzzt</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
