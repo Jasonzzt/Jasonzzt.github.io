@@ -1,0 +1,927 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>软工导论期末复习 | Jasonzzt个人博客</title><meta name="keywords" content="复习，软件工程"><meta name="author" content="Jasonzzt"><meta name="copyright" content="Jasonzzt"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="软件工程导论复习software:简答题 什么是软件 instruction 指令的集合(计算机程序)，通过执行这些指令可以满足预期的特性、功能和性能需求。 data structure 数据结构，使得程序可以合理利用信息。 documentation 软件描述信息，他以硬拷贝和虚拟形式存在，用来描述程序的操作和使用。  软件的特点： • 软件是设计开发的，而不是传统意义上生产制造的。• 软件不会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软工导论期末复习">
+<meta property="og:url" content="https://jasonzzt.github.io/2022/05/27/%E8%BD%AF%E5%B7%A5%E5%AF%BC%E8%AE%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Jasonzzt个人博客">
+<meta property="og:description" content="软件工程导论复习software:简答题 什么是软件 instruction 指令的集合(计算机程序)，通过执行这些指令可以满足预期的特性、功能和性能需求。 data structure 数据结构，使得程序可以合理利用信息。 documentation 软件描述信息，他以硬拷贝和虚拟形式存在，用来描述程序的操作和使用。  软件的特点： • 软件是设计开发的，而不是传统意义上生产制造的。• 软件不会">
+<meta property="og:locale">
+<meta property="og:image" content="https://img1.baidu.com/it/u=3470134734,1474817501&fm=253&fmt=auto&app=138&f=JPEG?w=640&h=356">
+<meta property="article:published_time" content="2022-05-27T09:08:28.000Z">
+<meta property="article:modified_time" content="2022-05-27T09:33:07.939Z">
+<meta property="article:author" content="Jasonzzt">
+<meta property="article:tag" content="复习，软件工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img1.baidu.com/it/u=3470134734,1474817501&fm=253&fmt=auto&app=138&f=JPEG?w=640&h=356"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jasonzzt.github.io/2022/05/27/%E8%BD%AF%E5%B7%A5%E5%AF%BC%E8%AE%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软工导论期末复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-27 17:33:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.whhost.net/tu/202101/TX9522_15.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img1.baidu.com/it/u=3470134734,1474817501&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=640&amp;h=356')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jasonzzt个人博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软工导论期末复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-27T09:08:28.000Z" title="Created 2022-05-27 17:08:28">2022-05-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-05-27T09:33:07.939Z" title="Updated 2022-05-27 17:33:07">2022-05-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软工导论期末复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="软件工程导论复习"><a href="#软件工程导论复习" class="headerlink" title="软件工程导论复习"></a>软件工程导论复习</h1><h3 id="software-简答题-什么是软件"><a href="#software-简答题-什么是软件" class="headerlink" title="software:简答题 什么是软件"></a>software:简答题 什么是软件</h3><ul>
+<li>instruction 指令的集合(计算机程序)，通过执行这些指令可以满足预期的特性、功能和性能需求。</li>
+<li>data structure 数据结构，使得程序可以合理利用信息。</li>
+<li>documentation 软件描述信息，他以硬拷贝和虚拟形式存在，用来描述程序的操作和使用。</li>
+</ul>
+<p><strong>软件的特点：</strong></p>
+<p>• 软件是设计开发的，而不是传统意义上生产制造的。<br>• 软件不会磨损，但是长期使用和修改会缓慢退化。<br>• 软件是根据需求定制，并在不断的变动。<br>• 软件相对复杂。</p>
+<p>软件危机是指<strong>落后的软件生产方式无法满足迅速增长的计算机软件需求</strong>，从而导致软件开发与维护过程中出现一系列严重问题的现象。</p>
+<p><strong>什么是软件危机</strong></p>
+<p>软件开发进度难以预测</p>
+<p>软件开发成本难以控制</p>
+<p>用户对产品功能难以满足</p>
+<p>软件产品质量无法保证</p>
+<p>软件产品难以维护</p>
+<p>软件缺少适当的文档资料</p>
+<p><strong>软件过程是工作产品构建时所进行的一系列活动，动作，任务的集合。</strong></p>
+<p><strong>过程框架[重要]：</strong></p>
+<p><strong>沟通，策划，建模（需求分析、设计），构建（代码、测试），部署。</strong></p>
+<p><strong>什么是软件生命周期(PPT定义)：</strong></p>
+<p><strong>软件有一个孕育、诞生、成长、成熟、衰亡的生存过程。这个过程即为计算机软件的生命周期(生存周期)。</strong></p>
+<p><strong>软件生命周期的七个阶段划分法：</strong></p>
+<p><strong>1、问题的定义及规划2、需求分析3、软件设计4、程序编码5、软件测试6、部署和维护7、升级和淘汰</strong></p>
+<p><strong>过程模型分为：惯用过程模型和敏捷过程模型。</strong></p>
+<h3 id="why-we-need-software-process"><a href="#why-we-need-software-process" class="headerlink" title="why we need software process"></a>why we need software process</h3><p>便于工作人员（软件团队）可以挑选适合的工作动作和任务集合，及时、高质量地交付软件，以满足软件项目资助方和最终用户的需求</p>
+<p><strong>Process Patterns</strong><br>what?</p>
+<p>描述在软件工程工作中遇到的与过程相关的问题<br>标识遇到问题的环境<br>对问题提出一个或多个已被证实的解决方案。<br>type:</p>
+<p>Stage patterns：定义框架内的问题<br>Task patterns：定义与工作目的、任务相关的问题<br>Phase patterns：定义软件过程（process）中的问题</p>
+<p><strong>CMMI (Capability Maturity Model  Integration) ——软件过程模型示例</strong></p>
+<p>CMMI是分级的，是一个最佳实践的集合，可以满足组织在不同兴趣领域的需求。</p>
+<ul>
+<li>A  process pattern type–<strong>stage pattern</strong></li>
+<li>A process meta-model 元模型</li>
+</ul>
+<h3 id="过程模型"><a href="#过程模型" class="headerlink" title="过程模型"></a>过程模型</h3><h4 id="prescriptive-process-model-惯用过程模型"><a href="#prescriptive-process-model-惯用过程模型" class="headerlink" title="prescriptive process model 惯用过程模型"></a><strong>prescriptive process model 惯用过程模型</strong></h4><p>惯例过程模型是在<strong>软件开发过程中的经验积累</strong>，它确定了软件开发全部过程、活动和人物的结构框架。</p>
+<p>useful but not perfect!</p>
+<p><strong>framework activities：惯例过程模型中共有的过程</strong></p>
+<ul>
+<li><p><strong>communication</strong></p>
+</li>
+<li><p>planning—-纯管理management过程（umbrella activity）</p>
+<p>planning,estimation.scheduling</p>
+</li>
+<li><p>modeling：<strong>design</strong></p>
+</li>
+<li><p><strong>construction</strong></p>
+<p>implementation,integration,<strong>testing</strong></p>
+</li>
+<li><p>deployment</p>
+</li>
+</ul>
+<h4 id="the-waterfall-model-amp-the-V-model"><a href="#the-waterfall-model-amp-the-V-model" class="headerlink" title="the waterfall model &amp; the V model"></a>the waterfall model &amp; the V model</h4><ul>
+<li><h5 id="waterfall-model"><a href="#waterfall-model" class="headerlink" title="waterfall model"></a>waterfall model</h5><ul>
+<li><p>classic lifecycle</p>
+</li>
+<li><p>strictly <strong>linear</strong></p>
+</li>
+<li><p>适用于基础的、需求变化不多的、熟悉的、低风险的系统</p>
+</li>
+<li><p><strong>特征</strong></p>
+<ol>
+<li>从上一项活动中接受该项活动的工作成果(工作产品)，作为输入</li>
+<li>利用这一输入实施该项活动应完成的内容</li>
+<li>给出该项活动的工作成果，作为输出传给下一项活动</li>
+<li>对该项活动实施的工作进行评审。若其工作得到确认，则继续下一项活动</li>
+</ol>
+</li>
+<li><p><strong>优点</strong></p>
+<ol>
+<li>强调开发的阶段性</li>
+<li>强调早期计划及需求调查</li>
+<li>强调产品测试</li>
+</ol>
+</li>
+<li><p><strong>缺点</strong></p>
+<ol>
+<li><p>瀑布模型过于依赖早期进行的唯一一次需求调查，不能适应需求的变化</p>
+<p>造成软件错误的积累和放大</p>
+</li>
+<li><p>瀑布模型是单一流程，开发中的经验教训不能反馈应用于本产品的过程</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><h5 id="V-model"><a href="#V-model" class="headerlink" title="V model"></a>V model</h5><ul>
+<li>a variant of waterfall model</li>
+<li>编码结束后，沿着V模型右侧执行测试，验证随着V模型左侧推进过程中生成的每个模型。强调了<strong>testing</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="the-increment-model"><a href="#the-increment-model" class="headerlink" title="the increment model"></a>the increment model</h4><ul>
+<li><p>又称产品改进模型，从给定需求开始，通过构造一系列<strong>中间版本</strong>来实施开发活动，依次类推，直到系统</p>
+<p>完成，每一个中间版本都是需求分析、设计、编码和测试的过程。某些中间版本的开发可以<strong>并行</strong>进行。</p>
+</li>
+<li><h5 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h5><ol>
+<li>相当于瀑布模型的迭代</li>
+<li>是随着日程时间的进展而交错的线性序列</li>
+<li>与原型不一样的地方是强调<strong>每个增量</strong>均发布一个可操作产品</li>
+<li>最典型的应用是同一个产品的不同项目(合同、用户)版本</li>
+</ol>
+</li>
+<li><h5 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h5><ul>
+<li>需求经常变化的软件开发</li>
+<li>市场急需开发人员和资金不能在设定的市场期限之前实现一个完善的产品的软件开发</li>
+</ul>
+</li>
+<li><h5 id="优点（-）"><a href="#优点（-）" class="headerlink" title="优点（*）"></a>优点（*）</h5><ol>
+<li>将待开发的软件系统模块化，可以分批次地提交软件产品，使用户可以及时了解软件项目的进展。</li>
+<li>以组件为单位进行开发降低了软件开发的风险。一个开发周期内的错误不会影响到整个软件系统。</li>
+<li>开发顺序灵活。开发人员可以对组件的实现顺序进行优先级排序，先完成需求稳定的核心组件。当组件的优先级发生变化时，还能及时地对实现顺序进行调整。</li>
+</ol>
+</li>
+</ul>
+<h4 id="evolutionary-model"><a href="#evolutionary-model" class="headerlink" title="evolutionary model"></a>evolutionary model</h4><ul>
+<li><p>majority of internet development</p>
+</li>
+<li><h5 id="适用于-1"><a href="#适用于-1" class="headerlink" title="适用于"></a>适用于</h5><ul>
+<li>需求不明确</li>
+<li>tight market deadlin</li>
+</ul>
+</li>
+<li><h5 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h5><ul>
+<li><p>原型是软件的最初版本，以最少的费用、最短的时间开发出的、反映最后软件的主要特征的系统。</p>
+</li>
+<li><p>适用于那些不能预先确切定义需求的软件系统的开发，更适用于那些项目组成员（包括分析员、设计员、程序员和用户）不能很好的交流或者通信的情况下。</p>
+</li>
+<li><p>特征</p>
+<ol>
+<li>它是一个可实际运行的系统</li>
+<li>它没有固定的生存期，它可能被扔掉，或者作为最终产品的一部分</li>
+<li>从需求分析到最终产品都可作原型，即可为不同目标作原型</li>
+<li>它必须快速、廉价</li>
+<li>它是迭代过程的集成部分，即每次经用户评价后修改、运行，不断重复双方认可</li>
+</ol>
+</li>
+<li><p>类型</p>
+<ul>
+<li><p>exploratory prototyping 探索</p>
+<p>弄清目标系统的要求和特性，探讨方案可行性</p>
+</li>
+<li><p>experimental prototyping 实验</p>
+<p>验证方案或算法合理性</p>
+</li>
+<li><p>evolutionary prototyping 演化</p>
+<p>将原型作为目标系统的一部分，逐步将原型演化为目标系统</p>
+</li>
+</ul>
+</li>
+<li><p>prototyping优点</p>
+<p>– 快速的开发出可以演示的系统，便于与客户沟通交流, 及时获得用户的反馈。<br>– 使用迭代技术能够逐步弄清用户的需求。<br>– 可在项目早期就获取项目的相关数据，尽早进行风险管理和配置管理<br>– 可使销售工作提前进行<br>– 心理：对开发人员鼓舞</p>
+</li>
+<li><p>prototypiny缺点</p>
+<p>– 软件的质量和可维护性差。结构不好。<br>– 用户可能混淆原型系统和最终系统。<br>– 不加控制让用户接触未稳定功能，对开发人员和用户不好</p>
+<p><strong>适用：需求模糊的项目，质量不能保证，是为定义需求而服务</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li><ul>
+<li><h5 id="spiral螺旋模型（风险驱动的过程模型）"><a href="#spiral螺旋模型（风险驱动的过程模型）" class="headerlink" title="spiral螺旋模型（风险驱动的过程模型）"></a>spiral螺旋模型（风险驱动的过程模型）</h5></li>
+<li><p>其他 models: ends when software is delivered</p>
+<p>spiral model: can be adapted to apply throughout the life of the software</p>
+</li>
+<li><p>是waterfall和prototyping的结合，并<strong>增加了风险分析</strong></p>
+</li>
+<li><p>spiral model沿着螺线旋转，在四个象限上分别表达四个方面的活动：</p>
+<ol>
+<li>制定计划：确定软件目标，选定实施方案，弄清项目开发的限制条件</li>
+<li>风险分析：评价所选的方案，识别风险，消除风险(和prototyping的不同)</li>
+<li>工程实施：实施软件开发，验证工作产品</li>
+<li>客户评估：评价开发工作，提出修正建议</li>
+</ol>
+</li>
+<li><p>维护只是spiral model的另一个周期，在维护和开发之间本质上并没有区别，从而解决了做太多测试或未作足够测试所带来的风险。</p>
+</li>
+<li><p>优点</p>
+<ol>
+<li>强调严格的全过程风险管理</li>
+<li>强调各开发阶段的质量</li>
+<li>提供机会检讨项目是否有价值继续下去</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>必须引入非常严格的风险识别，风险分析和风险控制，这对风险管理的技能水平提出了很高的要求。也需要人员，资金和时间的大量投入</li>
+</ol>
+</li>
+<li><p>适用于大型的昂贵的系统级的软件应用</p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><h5 id="喷泉模型-并发模型"><a href="#喷泉模型-并发模型" class="headerlink" title="喷泉模型(并发模型)"></a>喷泉模型(并发模型)</h5>• 特点：是软件生命周期的各个阶段是相互重叠和多次反复的，各阶段没有明显的界线。是一种线性<br>开发模型，与瀑布模型类似，只是从串行改并行<br>• 优点：提高软件项目开发效率，节省开发时间<br>• 缺点：<br>– 在各个开发阶段是重叠的，因此在开发过程中需要大量的开发人员，不利于项目的管理<br>– 要求严格管理文档，使得审核的难度加大，尤其是面对可能随时加入各种信息、需求与资料的<br>情况<br>• 适用：用于面向对象方法，面向对象的分析和设计重叠，交叉、并行进行</li>
+</ul>
+</li>
+</ol>
+<h4 id="the-unified-process-UP"><a href="#the-unified-process-UP" class="headerlink" title="the unified process(UP)"></a>the unified process(UP)</h4><ul>
+<li><p><strong>特征</strong></p>
+<ol>
+<li>用例驱动</li>
+<li>以架构为核心</li>
+<li>迭代并且增量</li>
+</ol>
+</li>
+<li><p>RUP的时间轴被分解为<strong>四个顺序的阶段</strong></p>
+<ol>
+<li><p>inception初始阶段 (commnication+planning)</p>
+<p>为系统建立业务案例并确定项目的边界</p>
+</li>
+<li><p>elaboration细化阶段 (planning+modeling)</p>
+<p>分析问题领域，建立健全的体系结构基础，编制项目计划，淘汰项目中最高风险的元素</p>
+</li>
+<li><p>construction构造阶段 (construction)</p>
+<p>所有剩余的构件和应用程序功能被开发并集成为产品，所有的功能被详细测试</p>
+</li>
+<li><p>transition交付阶段 (construction+deployment)</p>
+<p>确保软件对最终用户是可用的</p>
+</li>
+</ol>
+</li>
+<li><p><strong>优点</strong></p>
+<p>提高了团队生产力，在迭代的开发过程、需求管理、基于组件的体系结构、可视化软件建模、验证软件质量及控制软件变更等方面，针对所有关键的开发活动为每个开发成员提供了必要的准则、模板和工具指导，并确保全体成员共享相同的知识基础。</p>
+<p>建立了简洁和清晰的过程结构，为开发过程提供较大的通用性。</p>
+</li>
+<li><p><strong>缺点</strong></p>
+<p>RUP在理论上，是比较理想的，但在实际应用上，还需要更多的工具的支持和普及推广工作。</p>
+<p><strong>适用于大型软件团队开发大型项目。</strong></p>
+</li>
+</ul>
+<h3 id="Agile-Development"><a href="#Agile-Development" class="headerlink" title="Agile Development"></a>Agile Development</h3><h4 id="1-manifesto-for-agile-software-development-敏捷开发宣言"><a href="#1-manifesto-for-agile-software-development-敏捷开发宣言" class="headerlink" title="1.  manifesto for agile software development:敏捷开发宣言"></a>1.  manifesto for agile software development:敏捷开发宣言</h4><p>有哪几条？</p>
+<ul>
+<li><p>个体和互动 高于 流程和工具</p>
+</li>
+<li><p>工作的软件 高于 详尽的文档</p>
+</li>
+<li><p>客户合作 高于 合同谈判</p>
+</li>
+<li><p>响应变化 高于 遵循计划</p>
+</li>
+</ul>
+<h4 id="2-an-agile-process-敏捷过程"><a href="#2-an-agile-process-敏捷过程" class="headerlink" title="2. an agile process:敏捷过程"></a>2. an agile process:敏捷过程</h4><p>是怎么样的？</p>
+<ul>
+<li><p>由客户对所需内容的描述来驱动（场景）</p>
+</li>
+<li><p>认识到这个计划是短暂的</p>
+</li>
+<li><p>迭代地开发软件，重点是构建</p>
+</li>
+<li><p>提供多个“软件增量”</p>
+</li>
+<li><p>适应变化</p>
+</li>
+<li><p>价值驱动——agile与传统的waterfall模式的最大区别</p>
+<p>• 特点：<br>– 适应变更<br>– 交流顺畅<br>– 客户参与<br>– 有效控制<br>– 拉平了变更成本曲线。</p>
+</li>
+</ul>
+<h4 id="3-extreme-programming-XP"><a href="#3-extreme-programming-XP" class="headerlink" title="3. extreme programming(XP):"></a>3. extreme programming(XP):</h4><h4 id="注意和scrum的对比，过程，工作产品，优缺点（简答题）"><a href="#注意和scrum的对比，过程，工作产品，优缺点（简答题）" class="headerlink" title="注意和scrum的对比，过程，工作产品，优缺点（简答题）"></a>注意和scrum的对比，过程，工作产品，优缺点（简答题）</h4><ul>
+<li><p>简介（来自课本）</p>
+<p>使用面向对象方法作为推荐的开发范型，它包含了策划、设计、编码和测试4个框架活动的规则和实践</p>
+<ul>
+<li><p>适用于</p>
+<ul>
+<li>小团队(2-10个programmers)</li>
+<li>“高风险”</li>
+<li>快速变化或不稳定的需求</li>
+<li>强调可测试性</li>
+</ul>
+</li>
+<li><p>有效的响应变化、有效的沟通、软件工程师和其他stakeholders一起构成团队、团队组织</p>
+</li>
+<li><p>快速、持续交付有价值的软件增量</p>
+</li>
+<li><p>使用<strong>面向对象</strong>方法作为推荐的开发范型</p>
+</li>
+<li><p>优点（来自网上，并不权威）</p>
+<ul>
+<li><strong>快速。</strong> 极限编程项目只需要几个月，而不是像其他方法那样需要数年。 工作节奏快，不浪费时间。 有持续的集成和部署。</li>
+<li><strong>可见。</strong> 团队内部的开放式沟通可帮助每个人跟上项目进度。 每个人都在处理各自的任务，但是例行会议会集体记录改进情况。 由于XP项目具有可见性，因此故障和错误受到限制。</li>
+<li><strong>降低成本。</strong> 在极限编程中，减少了反馈回路。 因此，改变的成本也降低了。 在其他方法中，仅在客户反馈后才重新制造代码。 在这里，在整个开发阶段都会执行更改。</li>
+<li><strong>团队合作。</strong> 在XP中，开发人员努力工作以在紧迫的期限内完成目标。 他们在整个项目中相互支持。 他们一起设计和测试代码。 结对编程将他们分成两人一组，在那儿他们共享想法并并排创建软件。 因此，增加了员工的承诺和满意度。</li>
+</ul>
+</li>
+<li><p>缺点（同样来自网上，不权威）</p>
+<ul>
+<li><strong>代码克服了设计。</strong> XP的重点肯定是代码而不是设计。 设计是销售应用程序的要素，因此如果设计不够好，客户可能会对最终产品不满意。 有时，这可能导致无法完全实现软件要求。</li>
+<li><strong>位置。</strong> 当客户远离开发团队时，XP项目很难实施。 通常，当团队成员面对面见面时，XP交互会成功。 因此，应用极限编程会限制项目范围。</li>
+<li><strong>缺少文档。</strong> 不断的更改无法正确记录。 因此，存在无法跟踪的意外故障的高风险。 即使修正了错误，但是如果没有准确的文档说明，同样的错误也有可能再次发生。</li>
+<li><strong>压力大</strong>。在期限紧迫的情况下工作压力很大。 如果开发人员压力很大，无法按时完成任务，则他们更有可能在编码时犯错误。 随后，由于调度，软件质量可能会降低。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-scrum"><a href="#4-scrum" class="headerlink" title="4. scrum"></a>4. scrum</h4></li>
+<li><p>简介（来自课本）</p>
+<p>过程由”需求、分析、设计、演化和交付”等框架性活动组成。</p>
+<p>每一个框架活动中，发生于一个过程模式中的工作任务称为一个<em>冲刺（sprint）</em>。</p>
+<p>冲刺中进行的工作（每一个框架活动中冲刺的数目根据产品复杂度和规模大小而有所不同）适应于当前的问题，由 Scrum 团队规定并常常进行实时修改。</p>
+</li>
+</ul>
+<ul>
+<li><h5 id="scrum–distinguishing-features"><a href="#scrum–distinguishing-features" class="headerlink" title="scrum–distinguishing features"></a>scrum–distinguishing features</h5><ul>
+<li>开发工作被划分为“包”</li>
+</ul>
+</li>
+<li><p>产品构造时，测试和文档也正在进行中</p>
+<ul>
+<li>工作发生在“sprint 冲刺”中，并从现有需求的“backlog 产品”中派生出来</li>
+</ul>
+</li>
+<li><p>会议召开的时间很短，有时没有椅子就会举行</p>
+<ul>
+<li>在被分配的时间内demo版本会交给客户</li>
+</ul>
+</li>
+<li><p>轻量级的项目管理框架，核心在于<strong>迭代iteration</strong>:</p>
+</li>
+<li><p>优点（来自网上，并不权威）</p>
+<ul>
+<li><p>更大的灵活性和稳定性，能很好地应对变化</p>
+</li>
+<li><p>更高的质量，更快的交付</p>
+</li>
+<li><p>提高团队绩效</p>
+</li>
+<li><p>更高的客户满意度</p>
+</li>
+<li><p>失败成本更低</p>
+</li>
+</ul>
+</li>
+<li><p>缺点（同样来自网上，并不权威）</p>
+<ul>
+<li>过于强调了人的自我管理，有缺乏能动性的队员时可能会影响进度</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>容易不停的因为目标变化而重新设计，最终导致不能交付</li>
+</ul>
+<h3 id="理解需求"><a href="#理解需求" class="headerlink" title="理解需求"></a>理解需求</h3><h4 id="系统工程"><a href="#系统工程" class="headerlink" title="系统工程"></a>系统工程</h4><p>• 系统：开发软件之前必须了解软件所处的外界环境。看树也要看森林。<br>• 系统中的元素：软件，硬件，人员，数据库，文档，规程，其他。<br>• 系统工程：关注目标系统各种相关要素的设计，并将其组织成有机的系统。</p>
+<h4 id="需求工程"><a href="#需求工程" class="headerlink" title="需求工程"></a>需求工程</h4><p>需求开发的方法[重要]<br>• 需求获取：1 开始过程：与客户建立初步交流。2 导出过程：通过访问和调查，获得需求的描述<br>• 需求分析：精化过程，通过分析建模，建立精确的技术模型，说明软件功能，特征和约束。<br>• 需求处理：1 协商过程2 形成规格说明3 需求确认</p>
+<h4 id="UML-diagram"><a href="#UML-diagram" class="headerlink" title="UML diagram"></a>UML diagram</h4><h5 id="1-use-case-diagram"><a href="#1-use-case-diagram" class="headerlink" title="1.use-case diagram"></a>1.use-case diagram</h5><ul>
+<li><p>用例符号：椭圆</p>
+</li>
+<li><p>关系</p>
+<table>
+<thead>
+<tr>
+<th align="center">关系</th>
+<th align="center">说明</th>
+<th align="center">符号</th>
+<th align="center">备注</th>
+<th>箭头指向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">关联</td>
+<td align="center">参与者与用例间的关系</td>
+<td align="center">箭头</td>
+<td align="center">参与者与用例之间的通信，任何一方都可发送或接受消息</td>
+<td>消息接收方</td>
+</tr>
+<tr>
+<td align="center">泛化</td>
+<td align="center">参与者之间或用例之间的关系</td>
+<td align="center">箭头尾端为三角形</td>
+<td align="center">继承关系</td>
+<td>父类</td>
+</tr>
+<tr>
+<td align="center">包含</td>
+<td align="center">用例之间的关系</td>
+<td align="center">虚线箭头，文字&lt;&lt;include&gt;&gt;</td>
+<td align="center">功能分解</td>
+<td>分解出来的功能用例</td>
+</tr>
+<tr>
+<td align="center">扩展</td>
+<td align="center">用例之间的关系</td>
+<td align="center">虚线箭头，文字&lt;&lt;extend&gt;&gt;</td>
+<td align="center">附加功能</td>
+<td>基础用例</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h5 id="2-class-diagram"><a href="#2-class-diagram" class="headerlink" title="2.class diagram"></a>2.class diagram</h5><ul>
+<li><p>类符号：矩形</p>
+</li>
+<li><p>关系</p>
+<table>
+<thead>
+<tr>
+<th align="center">关系</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">继承</td>
+<td align="center">指向父类</td>
+</tr>
+<tr>
+<td align="center">实现</td>
+<td align="center">表示一个class类实现interface接口（可以是多个）的功能</td>
+</tr>
+<tr>
+<td align="center">依赖</td>
+<td align="center">两个相对独立的对象，一个对象依赖另一个对象的服务</td>
+</tr>
+<tr>
+<td align="center">关联</td>
+<td align="center">两个相对独立的对象，一个对象的实例与另一个对象的一些特定实例存在固定的对应关系</td>
+</tr>
+<tr>
+<td align="center">聚合</td>
+<td align="center">弱的拥有，菱形在总体的一边，整体可缺少部分</td>
+</tr>
+<tr>
+<td align="center">组合</td>
+<td align="center">强的拥有，菱形在总体的一边，整体不可缺少部分</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h5 id="3-state-diagram"><a href="#3-state-diagram" class="headerlink" title="3.state diagram"></a>3.state diagram</h5><ul>
+<li>状态表示：矩形，四角为圆弧</li>
+<li>状态转换表示：箭头，上面写触发条件</li>
+</ul>
+<h5 id="4-activity-diagram"><a href="#4-activity-diagram" class="headerlink" title="4.activity diagram"></a>4.activity diagram</h5><ul>
+<li><p>活动表示：矩形，四角为圆弧</p>
+</li>
+<li><p>分支与合并</p>
+<p>用菱形表示，它有一个进入转换（箭头从外指向分支符号），一个或多个离开转换（箭头从分支符号指向外）。而<strong>每个离开转换上都会有一个监护条件</strong>，用来表示满足什么条件的时候执行该转换。</p>
+</li>
+<li><p>分叉与汇合</p>
+<p>成对出现</p>
+</li>
+</ul>
+<h4 id="需求建模"><a href="#需求建模" class="headerlink" title="需求建模"></a>需求建模</h4><p><strong>类建模[重要]</strong><br>• 使用基于场景和面向流的建模元素中提取信息, 确定分析类, 可以使用语法分析从文本叙述中提取候<br>选类, 属性和操作, 并制定用于定义类的标准,CRC[类, 职责, 协作] 索引卡可以用于定义类之间的联<br>系. 使用UML 建模符号定义类之间的层次. 联系, 关联. 聚合和依赖. 使用分析包将类分组. 为大型<br>系统提供更好的管理.<br>• 类图: 描述系统中类的静态结构. 不仅定义了系统和分组, 表示类之间的联系, 如关联依赖聚合组合.<br>也包括类的内部结构.<br>• 协作图: 描述<strong>对象间</strong>的协作关系. 和顺序图类似. 显示对相间的动态合作关系.</p>
+<h4 id="CRC-Card"><a href="#CRC-Card" class="headerlink" title="CRC Card"></a>CRC Card</h4><p>CRC卡是一个标准索引卡集合，包括三个部分：<strong>类名</strong>、<strong>类的职责</strong>、<strong>类的协作关系</strong>，<strong>每一张卡片表示一个类</strong>。</p>
+<p> <strong>类</strong> 代表一系列对象的集合，这些对象是对系统设计的抽象建模，可以是一个人、一件物品等等，<strong>类名写在整个CRC卡的最上方</strong>。</p>
+<p>· <strong>职责</strong> 包括这个类对自身信息的了解，以及这些信息将如何运用。诸如，一个人，他知道他的电话号码、地址、性别等属性，并且他知道他可以说话、行走的行为能力。这个部分在CRC卡的左边。</p>
+<p>· <strong>协作</strong> 指代另一个类，我们通过这个类获取我们想要的信息或者相关操作。这个部分在CRC卡的右边。</p>
+<p>CRC卡片的背面往往记载着这个类的详细描述和在CEC设计中的一些注意事项。</p>
+<h3 id="设计工程"><a href="#设计工程" class="headerlink" title="设计工程"></a>设计工程</h3><p><strong>抽象</strong><br>• 数据抽象：定义数据类型和施加于该类型对象的操作。限定对象的取值范围，只能通过这些操作来<br>修改个观察数据。<br>• 过程抽象(功能角度的抽象)：将功能体作为单个功能看待。该功能体实际上是由一系列更低级的功<br>能或者代码来实现的。<br>• eg: 数据抽象：门     过程抽象：开门</p>
+<p><strong>体系结构</strong></p>
+<p>软件体系结构关注系统的一个或者多个结构，包含软件部件，部件对外可见的属性以及部件之间的<br>关系。</p>
+<p>体系结构的作用<br>– 方便利益相关人员的交流。<br>– 有利于系统设计的前期决策<br>– 可传递，易于理解的系统级抽象</p>
+<p><strong>模式[便于复用软件]</strong></p>
+<p>• 每个模式都描述了一个在我们所处环境内反复发生的问题。描述了该问题的核心解决方案。</p>
+<p><strong>模块化(面向过程编程思想)</strong></p>
+<p>• 背景：问题越复杂，解决问题花费的时间越多。<br>• 解决：将复杂问题分解成多个子问题，解决起来会更加的容易。（模块化思想的依据）<br>• 注意：不要无限制的划分软件。虽然划分的越多，子模块的工作量减少。但是工作量还取决于模块<br>间接口的集成和负责不同模块的人员的沟通。如果划分的太多，集成和沟通的开销将会很大。<br>• 结论：寻找最佳模块化成都的平衡点。（每个模块成本和联接成本的权衡问题）</p>
+<p>What is a Component</p>
+<p>一个模块化的、可部署的、可替换的系统部分，它封装了实现并公开了一组接口。</p>
+<p>Basic Design Principles</p>
+<p>The Open-Closed Principle (OCP)</p>
+<p>对拓展开放，对修改封闭</p>
+<p>The Liskov Substitution Principle (LSP)</p>
+<p>子类可替代基类</p>
+<p>Dependency Inversion Principle (DIP)</p>
+<p>依赖抽象而非实体</p>
+<p>The Interface Segregation Principle (ISP)</p>
+<p>接口分离，尽可能将功能独立，降低耦合</p>
+<p><strong>功能独立</strong><br>• [地位] 功能独立是模块化的根本要求<br>• 模块各自完成独立的功能，明确可辨识。<br>• 模块独立性的指标：内聚度，耦合度。<br>• 高内聚（<strong>cohesion</strong>）：模块内部结构紧密<br>• 低耦合（<strong>coupling</strong>）：模块间的关联依赖程度尽可能小。<br>• 符合信息隐藏和信息局部化的原则。<br>• [意义]：<br>– 模块的开发者只需要注重一个相对独立的部分，不用过多的关心其他模块。<br>– 修改和Bug 所影响的范围被局部化。<br>– 单个模块特别容易复用。<br>– 独立的模块更易于维护和测试。<br><strong>• 内聚度[由强到弱]</strong><br>– <strong>功能内聚</strong>[最高程度的内聚]：单个模块内部的各个部分都是为完成一项具体功能而协同工作紧<br>密联系不可分割的单个功能。<br>– <strong>分层内聚</strong>：高层能访问底层的服务，反之不能。<br>– <strong>顺序内聚</strong>：每个模块内部的各个组成部分必须顺序执行。前一个模块的动作的输出是后一个模<br>块动作的输入。<br>– <strong>通信内聚</strong>：模块内各个组成部分的处理使用相同的输入数据或者具有相同的输出数据。<br>– <strong>过程内聚</strong>：模块内多个任务，即使动作不相同，不相联系，但是他们都受一个控制流支配，必<br>须按照指定的过程执行。<br>– <strong>时间内聚</strong>：模块内个各个部分的处理与时间相关。如：启动时要进行的全部操作。<br>– <strong>实用内聚</strong>：每一个模块中，某一方面相关，其他方面都不相关的构建操作被分为一个组。</p>
+<p><strong>• 耦合度[由高到底]</strong><br>– <strong>内容耦合</strong>：一个模块可以直接访问另一个模块的内容或者内部功能<br>– <strong>共用耦合</strong>：多个模块共同访问某些公共数据环境。<br>– <strong>外部耦合</strong>：一组模块都访问同一全局简单变量，而不是同一全局数据结构，也不是通过参数表<br>传递该全局变量的信息。<br>– <strong>控制耦合</strong>：模块间的交互参数包含控制信息，可影响另一个模块的执行逻辑。<br>– <strong>标记耦合</strong>：模块间传递特定的数据结构<br>– <strong>数据耦合</strong>：模块间只通过参数列表传递简单的数据。<br>– <strong>非直接耦合</strong>：两个模块可以相对独立工作。</p>
+<ul>
+<li>例程调用耦合：一个操作调用另一操作。[需要减少]</li>
+<li>类型使用耦合：A 使用B 定义的一个数据类型.</li>
+</ul>
+<h4 id="what-is-quality"><a href="#what-is-quality" class="headerlink" title="what is quality"></a>what is quality</h4><h5 id="1-分类"><a href="#1-分类" class="headerlink" title="1.分类"></a>1.分类</h5><ol>
+<li>quality of design<ul>
+<li>requirements,specifications（说明）,design of the system</li>
+</ul>
+</li>
+<li>quality of conformance（一致性）<ul>
+<li>implementation</li>
+</ul>
+</li>
+</ol>
+<h5 id="2-定义"><a href="#2-定义" class="headerlink" title="2.定义"></a>2.定义</h5><ul>
+<li>软件质量可以定义为:一个有效的软件过程，它创造了有用的产品，为那些生产它的人和那些使用它的人提供了可衡量的价值。</li>
+</ul>
+<p><strong>McCall的质量三角形</strong></p>
+<p>McCall 的质量因素[重要]<br>• 影响因素分为两大类：可以直接测量的因素[例如测试时发现的缺陷]。只能间接测量的因素[易用<br>性，可维护性].<br>• 内容：正确性、可靠性、效率、完整性、易用性、可维护性、灵活性、可测试性、可移植性、可复用<br>性、互操作性。</p>
+<p><img src="https://img-blog.csdnimg.cn/a813275405a847cb85c603a68d11b636.png" alt="在这里插入图片描述"></p>
+<h4 id="the-cost-of-quality（COQ）-论证为什么质量是免费的"><a href="#the-cost-of-quality（COQ）-论证为什么质量是免费的" class="headerlink" title="the cost of quality（COQ）:论证为什么质量是免费的"></a>the cost of quality（COQ）:论证为什么质量是免费的</h4><h5 id="1-prevention-costs-COP-预防成本"><a href="#1-prevention-costs-COP-预防成本" class="headerlink" title="1.prevention costs (COP) 预防成本"></a>1.prevention costs (COP) 预防成本</h5><ul>
+<li>training</li>
+<li>standard,procedures</li>
+<li>planning</li>
+<li>quality improvement</li>
+<li>audits</li>
+<li>analysis</li>
+</ul>
+<h5 id="2-appraisal-costs-COA-评估成本"><a href="#2-appraisal-costs-COA-评估成本" class="headerlink" title="2.appraisal costs (COA) 评估成本"></a>2.appraisal costs (COA) 评估成本</h5><ul>
+<li>reviews</li>
+<li>walkthroughs</li>
+<li>testing</li>
+<li>supplier monitoring</li>
+</ul>
+<h5 id="3-failure-costs-失效成本"><a href="#3-failure-costs-失效成本" class="headerlink" title="3.failure costs 失效成本"></a>3.failure costs 失效成本</h5><ul>
+<li><p>没有错误就不会出现的费用</p>
+</li>
+<li><h5 id="internal-failure-costs"><a href="#internal-failure-costs" class="headerlink" title="internal failure costs"></a>internal failure costs</h5><ul>
+<li><p>Correction and rework</p>
+</li>
+<li><p>Regression testing</p>
+</li>
+<li><p>wasted tester time</p>
+</li>
+<li><p>cost of late shipment</p>
+</li>
+<li><p>opportunity cost of late shipment</p>
+<p>未发货</p>
+</li>
+</ul>
+</li>
+<li><h5 id="external-failure-costs"><a href="#external-failure-costs" class="headerlink" title="external failure costs"></a>external failure costs</h5><ul>
+<li>Technical support calls</li>
+<li>Investigate customer complaints</li>
+<li>refunds and recalls</li>
+<li>lost sales</li>
+<li>lost goodwill</li>
+<li>penalties</li>
+<li>liability costs</li>
+<li>legal fees</li>
+</ul>
+<p>已经发给客户</p>
+</li>
+</ul>
+<h5 id="4-改进方法"><a href="#4-改进方法" class="headerlink" title="4.改进方法"></a>4.改进方法</h5><ul>
+<li>增加预防成本（COP）</li>
+<li>failure cost就会减小</li>
+<li>return on investment</li>
+</ul>
+<h4 id="质量保障是一个部门。"><a href="#质量保障是一个部门。" class="headerlink" title="质量保障是一个部门。"></a><strong>质量保障是一个部门。</strong></h4><h2 id="TESTING"><a href="#TESTING" class="headerlink" title="TESTING"></a>TESTING</h2><p>测试是在交付给最终用户之前，为了发现error和fault而执行程序的过程。</p>
+<h5 id="error-fault-and-failure-看懂"><a href="#error-fault-and-failure-看懂" class="headerlink" title="error,fault and failure:看懂"></a>error,fault and failure:看懂</h5><ul>
+<li>error : design + programming</li>
+<li>fault : code ,the result of error</li>
+<li>failure : software fault</li>
+<li>users don’t observe errors or faults , they observe execution failures.</li>
+</ul>
+<h5 id="verification-amp-validation-验证与确认-分别是干什么的"><a href="#verification-amp-validation-验证与确认-分别是干什么的" class="headerlink" title="verification &amp; validation 验证与确认:分别是干什么的"></a>verification &amp; validation 验证与确认:分别是干什么的</h5><ol>
+<li><p>verification</p>
+<ul>
+<li>ensure the software correctly implements a specific function</li>
+</ul>
+</li>
+<li><p>validation</p>
+<ul>
+<li><p>ensure the software that has been built is traceable to customer requirement</p>
+<p>确保已构建的软件可追溯到客户需求</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>3.使用情况:<strong>看懂</strong></p>
+<p><img src="http://coseu-nanjing.oss-cn-nanjing.aliyuncs.com/img/markdown/image-20220527013636011.png" alt="image-20220527013636011"></p>
+<p>4.区别与联系:<strong>背会</strong></p>
+<ul>
+<li><p>联系</p>
+<ul>
+<li><p>Both verification and validation use the same techniques </p>
+<p>(such as testing, review, inspection, etc.)</p>
+</li>
+</ul>
+</li>
+<li><p>区别——reference for correctness</p>
+<ul>
+<li><p>In verification, we use the output from the <strong>previous step</strong> as the reference of correctness (for example, when we verify a code, we check it against the design)</p>
+<p>在verification中，我们使用上一步的输出作为正确性的参考（例如，当我们验证一个代码时，我们根据设计检查它）</p>
+</li>
+<li><p>In validation, we always use the “<strong>user needs</strong>” as the reference of correctness (for example, when we validate a code, we check it against the user needs and expectation)</p>
+<p>在validation中，我们总是使用“用户需求”作为正确性的参考（例如，当我们验证代码时，我们根据用户需求和期望检查代码）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="测试策略（列举）"><a href="#测试策略（列举）" class="headerlink" title="测试策略（列举）"></a>测试策略（列举）</h3><p>单元测试、集成测试、系统测试、验证测试</p>
+<ul>
+<li><strong>单元测试是针对程序中的模块或者部件的测试，主要揭露编码阶段产生的错误。</strong></li>
+<li><strong>集成测试是构造软件体系结构的系统化技术，同时也是进行一些旨在发现与结构相关错误的测试。</strong></li>
+</ul>
+<h3 id="测试技术"><a href="#测试技术" class="headerlink" title="测试技术"></a>测试技术</h3><h4 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h4><p>• 也称行为测试<br>• 把程序看出不能打开的盒子，不考虑程序内部结构和内部特性。只考察数据的输入，条件限制，和<br>数据输出。</p>
+<h4 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h4><p>• 也称结构测试，或者逻辑驱动测试。<br>• 基于内部逻辑结构，针对程序语句，路径，变量状态的测试。<br>• 确认程序中各个分支条件是否有效，正确。</p>
+<p>黑盒测试和白盒测试的区别：<br>        1）定义：<br>        白盒测试需要从代码句法发现内部代码在算法，溢出，路径，条件等等中的缺点或者错误，进而加以修正。而黑盒测试着重测试软件功能，它并不涉及程序的内部结构和内容特性。黑盒测试并不能取代白盒测试，它与白盒是互补的测试方法，它很可能发现白盒测试不易发现的其他类型错误。<br>        2）测试目的：<br>        黑盒测试的目的是检测是否有不正确或遗漏的功能；数据或者参数上，输入能否正确接收；是否有数据结构错误或外部信息访问错误；性能上是否能够满足要求；是否有初始化或终止性错误。而白盒测试的目的是通过在不同点检查程序的状态，确定实际的状态是否与预期的状态一致，而不顾它的功能。</p>
+<p>​        3）检测方式：<br>​    白盒测试是穷举路径测试，黑盒测试是穷举输入测试，这两种方法是基于完全不同的观点，反应了事物的两个极端，它们各有侧重和优势，但不能彼此替代。在现代的测试理念中，这两种测试方法不是截然分开的，而是交叉使用。</p>
+<p>黑盒测试</p>
+<p>优点：1.上手简单，只需关注业务逻辑等 2. 用户视角，更贴合真实用户使用场景</p>
+<p>缺点：1. 测试质量高低受测试工程师经验影响 2. 异常场景比较难覆盖 3.用例代码覆盖率低</p>
+<p>白盒测试</p>
+<p>优点：1. 用例覆盖率高 2.异常场景易发现 </p>
+<p>缺点：1. 投入成本高 2.更多以开发视角出发，容易脱离业务</p>
+<h4 id="static-testing-vs-dynamic-testing"><a href="#static-testing-vs-dynamic-testing" class="headerlink" title="static testing vs. dynamic testing"></a>static testing vs. dynamic testing</h4><ol>
+<li>静态分析静态方法是指不运行被测程序本身，仅通过分析或检查源程序的语法、结构、过程、接口等来检查程序的正确性。对需求规格说明书、软件设计说明书、源程序做结构分析、流程图分析、符号执行来找错。通常只能进行手工测试，虽然也有辅助工具帮助，但仍以人为主体</li>
+<li>动态测试往往可以部分地或者全部自动化进行提供有效的测试用例集，通过测试平台对被测程序进行测试，跟踪并分析测试结果</li>
+</ol>
+<h3 id="20-21-Security-Engineering-amp-SCM-软件配置管理"><a href="#20-21-Security-Engineering-amp-SCM-软件配置管理" class="headerlink" title="20-21. Security Engineering &amp; SCM(软件配置管理)"></a><strong>20-21. Security Engineering &amp; SCM(软件配置管理)</strong></h3><p>Why Security Engineering？</p>
+<p>(为什么进行安全工程，安全性尽早去规划？)</p>
+<p>以下几条构成一段话</p>
+<ol>
+<li><p>安全性是系统完整性、可用性、可靠性和安全性的前提。</p>
+</li>
+<li><p>安全性提供了使系统能够保护其资产免受攻击的机制。</p>
+</li>
+<li><p>资产是对涉众有价值的系统资源（信息、文件、程序、存储器、处理器容量）。</p>
+</li>
+<li><p>攻击利用允许未经授权的系统访问的漏洞。</p>
+</li>
+<li><p>很难通过响应错误报告来提高系统的安全性，安全性必须从一开始就进行适当的测试</p>
+</li>
+</ol>
+<p>SCM的概念：SCM——software configuration management（软件配置管理）</p>
+<p>SCM活动的目标就是为了标识变更、控制变更、确保变更正确实现并向其他有关人员报告变更。目的是使错误降为最小并最有效地提高生产效率。 主要的好处在于版本控制和变更控制。，软件配置是一个软件产品在生存期各个阶段的不同形式（记录特定信息的不同媒体）和不同版本的程序、文档及相关数据的集合，或者说是配置项的集合</p>
+<p>软件配置是一个集合，该集合中的每一个元素称为该软件产品软件配置中的一个配置项（Software Configuration Item，SCI）</p>
+<p>Baselines（基线）：</p>
+<p>基线是已经正式通过复审和批准的某规约和产品，它因此可作为进一步开发的基础，并且只能通过正式的变化控制过程来改变。基线通常标志开发过程一个阶段的结束（里程碑）。</p>
+<p>软件配置项（Software Configuration item，SCI）</p>
+<p>是指在整个软件生命周期内产生的、需要进行配置管理的各种工作产品，包括文档、程序、数据、标准及规约。</p>
+<p><strong>SCM process</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20210622130935301.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxNzg2MDUz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol>
+<li><p>SCIs制定</p>
+</li>
+<li><p>配置审核</p>
+</li>
+<li><p>配置项的版本控制</p>
+</li>
+<li><p>基线变更管理</p>
+</li>
+<li><p>识别和标志配置项</p>
+</li>
+<li><p>状态统计</p>
+</li>
+<li><p>报告</p>
+</li>
+</ol>
+<h3 id="22-Project-Management-Concepts"><a href="#22-Project-Management-Concepts" class="headerlink" title="22. Project Management Concepts"></a><strong>22.</strong> Project Management Concepts</h3><h4 id="4-P（答出来四个P）（people、product、process、project-人、产品、过程、项目"><a href="#4-P（答出来四个P）（people、product、process、project-人、产品、过程、项目" class="headerlink" title="4 P（答出来四个P）（people、product、process、project)(人、产品、过程、项目)"></a>4 P（答出来四个P）（people、product、process、project)(人、产品、过程、项目)</h4><p>W5HH（系统开发原则）</p>
+<p>why is the system being developed</p>
+<p>what will be done</p>
+<p>when will it be accomplished</p>
+<p>who is responsible</p>
+<p>where are they organizationally located</p>
+<p>how will the job be done technically and managerially</p>
+<p>how much of each resource(e.g.，people，software，tools，database)will be needed</p>
+<h3 id="23-度量"><a href="#23-度量" class="headerlink" title="23.度量"></a><strong>23.度量</strong></h3><p><strong>why do we measure?</strong></p>
+<ol>
+<li><p>评估正在进行的项目的状态</p>
+</li>
+<li><p>跟踪潜在风险</p>
+</li>
+<li><p>在问题变得“关键”之前发现问题区域</p>
+</li>
+<li><p>Adjust work flow or tasks调整工作流程或任务</p>
+</li>
+<li><p>评估项目团队控制软件工作产品质量的能力</p>
+</li>
+</ol>
+<p><strong>根据process metrics举例判断什么度量</strong></p>
+<p><strong>process metrics</strong></p>
+<ol>
+<li><p>提供能够引导长期的软件过程改进的一组过程指标质量相关：</p>
+</li>
+<li><p>聚焦于产品和可交付产品的质量</p>
+</li>
+<li><p>生产力相关：和精力的消耗有关</p>
+</li>
+<li><p>SQA数据的统计：错误分类与分析</p>
+</li>
+<li><p>缺陷的去除效率： 将错误从流程活动传播到活动</p>
+</li>
+<li><p>重用数据：生成的组件数量及其可重用性</p>
+</li>
+</ol>
+<p><strong>项目度量是什么</strong></p>
+<p><strong>用于所有项目</strong></p>
+<p><strong>用于通过做出必要的调整来最小化开发进度，以避免延迟和减少潜在的问题和风险</strong></p>
+<p><strong>用于持续评估产品质量，必要时，修改技术方法以提高质量。</strong></p>
+<p><strong>每个项目都应该测量：</strong></p>
+<p><strong>输入——工作所需资源(例如，人员，工具)的度量。</strong></p>
+<p><strong>输出——在软件工程过程中创建的可交付成果或工作产品的度量。</strong></p>
+<p><strong>结果——表明可交付成果有效性的度量方法。</strong></p>
+<p><strong>Typical Types of Metrics</strong></p>
+<p><strong>面向规模、函数、对象、用例的度量</strong></p>
+<h3 id="24-26章："><a href="#24-26章：" class="headerlink" title="24-26章："></a>24-26章：</h3><p>一．什么是项目的范围？</p>
+<p>Scope is defined using one of two techniques: </p>
+<p>1.A narrative description of software scope is developed after communication with all </p>
+<p>stakeholders. </p>
+<ol start="2">
+<li>A set of use-cases is developed by end-users</li>
+</ol>
+<p>二．WBS的划分方式</p>
+<ol>
+<li><p>project products (tools, tangible outputs, .) </p>
+</li>
+<li><p>project phases (concepts, steps,..) </p>
+</li>
+<li><p>project management process groups (initializing, developing, executing, closing)</p>
+</li>
+</ol>
+<p>三．进行项目规划评估的三个估量模型LOC&#x2F;FP&#x2F;COCOMO，知道名字，怎么使用。</p>
+<ol>
+<li>基于LOC的估算(line of code)</li>
+</ol>
+<p>优点 </p>
+<p>Simple to measure </p>
+<p>Easy to automate 易于自动化 </p>
+<p>缺点 </p>
+<p>Only defined for code, not the design </p>
+<p>Bad design may cause excessive LOC 不良的设计可能导致过大的LOC </p>
+<p>Language dependent </p>
+<p>Does not account for functionality or complexity 不考虑功能性或复杂性 </p>
+<ol start="2">
+<li>基于FP的估算</li>
+</ol>
+<p>优点 ：</p>
+<p>Usable in the earliest requirements phases 在最早的需求阶段可用 </p>
+<p>Independent of programming language, product design, or development style 独 </p>
+<p>立于编程语言、产品设计或开发风格 </p>
+<p>User’s view, rather than implementation view 用户视图，而不是实现视图 </p>
+<p>Can be used to measure the non-coding activities 可用于测量非编码活动 </p>
+<p>There exists a large body of historical data 有大量的历史资料 </p>
+<p>A well documented method 有据可查的方法 </p>
+<p>缺点 ：</p>
+<p>Cannot directly count an existing product’s (source code) FP content 无法直接统计 </p>
+<p>现有产品的（源代码）FP内容 </p>
+<p>Hard to automate 难以自动化(一般要人力) </p>
+<p>FP do not reflect language, design, or style differences FP不反映语言、设计或风格 </p>
+<p>差异 </p>
+<p>FP are designed for estimating commercial data processing applications FP是为估 </p>
+<p>计商业数据处理应用而设计的 </p>
+<p>Subjective counting 主观计数 </p>
+<p>3.基于经验估算模型的估算 empirical estimation models </p>
+<ol>
+<li>COCOMO模型 (constructive cost modeling , 构造性成本模型)</li>
+</ol>
+<p>based on project experiece </p>
+<p>widely used </p>
+<p>several support tools available </p>
+<p>四．Task network找出项目中不可延误的工作，不需要知道怎么找。</p>
+<p>五．采用什么工具帮助我们进行进度表设计？（甘特图）</p>
+<ol>
+<li><p>甘特图(Gantt Chart)也称时间表(Timeline chart)，用来建立项目进度表 </p>
+</li>
+<li><p>为监控软件项目的进度计划和工作的实际进展情况，表现各项任务之间进度的相互依赖关系 </p>
+</li>
+<li><p>需要采用图示的方法明确标识：</p>
+</li>
+</ol>
+<p>各个任务的计划开始时间和完成时间 </p>
+<p>各个任务的完成标志 </p>
+<p>各个任务与参与工作的人数，各个任务与工作量之间的衔接情况 </p>
+<p>完成各个任务所需的物理资源和数据资源</p>
+<ol start="4">
+<li>在甘特图中，用菱形表示milestone。</li>
+</ol>
+<p>六．Milestone</p>
+<ol>
+<li><p>在甘特图中，每项任务的完成以必须交付的文档和通过评审为标准，因此它们往往作为项目里程碑 (一般情况下是评审活动) </p>
+</li>
+<li><p>作用：敏捷、详细、可度量、可分配、现实性、期间时限</p>
+</li>
+</ol>
+<p>七．RMMM这几个字母代表什么单词，分别什么意思？</p>
+<ol>
+<li><p>对于每个中截线以上的风险，都应制定RMMM，RMMM的实施会导致额外的项目开销 </p>
+</li>
+<li><p>mitigation 避免how can we avoid the risk? </p>
+</li>
+<li><p>monitoring 检测what factors can we track that will enable us to determine if the risk is</p>
+</li>
+</ol>
+<p>becoming more or less likely? </p>
+<ol start="4">
+<li>management 管理what contingency意外事故 plans do we have if the risks becomes a</li>
+</ol>
+<p>reality? </p>
+<p>八．Risk Management Paradigm </p>
+<p>•Risk identification </p>
+<p>•Risk analysis </p>
+<p>•Risk planning </p>
+<p>•Risk monitoring</p>
+<p>​                 <img src="/../../images/se1.png" alt="img">        </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://Jasonzzt.github.io">Jasonzzt</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://jasonzzt.github.io/2022/05/27/%E8%BD%AF%E5%B7%A5%E5%AF%BC%E8%AE%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">https://jasonzzt.github.io/2022/05/27/%E8%BD%AF%E5%B7%A5%E5%AF%BC%E8%AE%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%EF%BC%8C%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">复习，软件工程</a></div><div class="post_share"><div class="social-share" data-image="https://img1.baidu.com/it/u=3470134734,1474817501&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=640&amp;h=356" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/15/os%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/"><img class="next-cover" src="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">os第三、四章-进程与线程</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.whhost.net/tu/202101/TX9522_15.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jasonzzt</div><div class="author-info__description">共享个人项目、刷题经验、课程资源等</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Jasonzzt/Jasonzzt.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1273302566@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">软件工程导论复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#software-%E7%AE%80%E7%AD%94%E9%A2%98-%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.0.1.</span> <span class="toc-text">software:简答题 什么是软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why-we-need-software-process"><span class="toc-number">1.0.2.</span> <span class="toc-text">why we need software process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.0.3.</span> <span class="toc-text">过程模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#prescriptive-process-model-%E6%83%AF%E7%94%A8%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">prescriptive process model 惯用过程模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#the-waterfall-model-amp-the-V-model"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">the waterfall model &amp; the V model</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#waterfall-model"><span class="toc-number">1.0.3.2.1.</span> <span class="toc-text">waterfall model</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#V-model"><span class="toc-number">1.0.3.2.2.</span> <span class="toc-text">V model</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#the-increment-model"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">the increment model</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E5%BE%81"><span class="toc-number">1.0.3.3.1.</span> <span class="toc-text">特征</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E4%BA%8E"><span class="toc-number">1.0.3.3.2.</span> <span class="toc-text">适用于</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%88-%EF%BC%89"><span class="toc-number">1.0.3.3.3.</span> <span class="toc-text">优点（*）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#evolutionary-model"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">evolutionary model</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E4%BA%8E-1"><span class="toc-number">1.0.3.4.1.</span> <span class="toc-text">适用于</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#prototype"><span class="toc-number">1.0.3.4.2.</span> <span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#spiral%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B%EF%BC%88%E9%A3%8E%E9%99%A9%E9%A9%B1%E5%8A%A8%E7%9A%84%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">1.0.3.4.3.</span> <span class="toc-text">spiral螺旋模型（风险驱动的过程模型）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%96%B7%E6%B3%89%E6%A8%A1%E5%9E%8B-%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.0.3.4.4.</span> <span class="toc-text">喷泉模型(并发模型)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#the-unified-process-UP"><span class="toc-number">1.0.3.5.</span> <span class="toc-text">the unified process(UP)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Agile-Development"><span class="toc-number">1.0.4.</span> <span class="toc-text">Agile Development</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-manifesto-for-agile-software-development-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E5%AE%A3%E8%A8%80"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">1.  manifesto for agile software development:敏捷开发宣言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-an-agile-process-%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">2. an agile process:敏捷过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-extreme-programming-XP"><span class="toc-number">1.0.4.3.</span> <span class="toc-text">3. extreme programming(XP):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E5%92%8Cscrum%E7%9A%84%E5%AF%B9%E6%AF%94%EF%BC%8C%E8%BF%87%E7%A8%8B%EF%BC%8C%E5%B7%A5%E4%BD%9C%E4%BA%A7%E5%93%81%EF%BC%8C%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%88%E7%AE%80%E7%AD%94%E9%A2%98%EF%BC%89"><span class="toc-number">1.0.4.4.</span> <span class="toc-text">注意和scrum的对比，过程，工作产品，优缺点（简答题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-scrum"><span class="toc-number">1.0.4.5.</span> <span class="toc-text">4. scrum</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#scrum%E2%80%93distinguishing-features"><span class="toc-number">1.0.4.5.1.</span> <span class="toc-text">scrum–distinguishing features</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E9%9C%80%E6%B1%82"><span class="toc-number">1.0.5.</span> <span class="toc-text">理解需求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.0.5.1.</span> <span class="toc-text">系统工程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.0.5.2.</span> <span class="toc-text">需求工程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UML-diagram"><span class="toc-number">1.0.5.3.</span> <span class="toc-text">UML diagram</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-use-case-diagram"><span class="toc-number">1.0.5.3.1.</span> <span class="toc-text">1.use-case diagram</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-class-diagram"><span class="toc-number">1.0.5.3.2.</span> <span class="toc-text">2.class diagram</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-state-diagram"><span class="toc-number">1.0.5.3.3.</span> <span class="toc-text">3.state diagram</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-activity-diagram"><span class="toc-number">1.0.5.3.4.</span> <span class="toc-text">4.activity diagram</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%BB%BA%E6%A8%A1"><span class="toc-number">1.0.5.4.</span> <span class="toc-text">需求建模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CRC-Card"><span class="toc-number">1.0.5.5.</span> <span class="toc-text">CRC Card</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.0.6.</span> <span class="toc-text">设计工程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#what-is-quality"><span class="toc-number">1.0.6.1.</span> <span class="toc-text">what is quality</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.6.1.1.</span> <span class="toc-text">1.分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%AE%9A%E4%B9%89"><span class="toc-number">1.0.6.1.2.</span> <span class="toc-text">2.定义</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#the-cost-of-quality%EF%BC%88COQ%EF%BC%89-%E8%AE%BA%E8%AF%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B4%A8%E9%87%8F%E6%98%AF%E5%85%8D%E8%B4%B9%E7%9A%84"><span class="toc-number">1.0.6.2.</span> <span class="toc-text">the cost of quality（COQ）:论证为什么质量是免费的</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-prevention-costs-COP-%E9%A2%84%E9%98%B2%E6%88%90%E6%9C%AC"><span class="toc-number">1.0.6.2.1.</span> <span class="toc-text">1.prevention costs (COP) 预防成本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-appraisal-costs-COA-%E8%AF%84%E4%BC%B0%E6%88%90%E6%9C%AC"><span class="toc-number">1.0.6.2.2.</span> <span class="toc-text">2.appraisal costs (COA) 评估成本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-failure-costs-%E5%A4%B1%E6%95%88%E6%88%90%E6%9C%AC"><span class="toc-number">1.0.6.2.3.</span> <span class="toc-text">3.failure costs 失效成本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#internal-failure-costs"><span class="toc-number">1.0.6.2.4.</span> <span class="toc-text">internal failure costs</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#external-failure-costs"><span class="toc-number">1.0.6.2.5.</span> <span class="toc-text">external failure costs</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.6.2.6.</span> <span class="toc-text">4.改进方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E4%BF%9D%E9%9A%9C%E6%98%AF%E4%B8%80%E4%B8%AA%E9%83%A8%E9%97%A8%E3%80%82"><span class="toc-number">1.0.6.3.</span> <span class="toc-text">质量保障是一个部门。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TESTING"><span class="toc-number">1.1.</span> <span class="toc-text">TESTING</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#error-fault-and-failure-%E7%9C%8B%E6%87%82"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">error,fault and failure:看懂</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#verification-amp-validation-%E9%AA%8C%E8%AF%81%E4%B8%8E%E7%A1%AE%E8%AE%A4-%E5%88%86%E5%88%AB%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%9A%84"><span class="toc-number">1.1.0.0.2.</span> <span class="toc-text">verification &amp; validation 验证与确认:分别是干什么的</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5%EF%BC%88%E5%88%97%E4%B8%BE%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">测试策略（列举）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">测试技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">黑盒测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">白盒测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#static-testing-vs-dynamic-testing"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">static testing vs. dynamic testing</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-21-Security-Engineering-amp-SCM-%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">20-21. Security Engineering &amp; SCM(软件配置管理)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-Project-Management-Concepts"><span class="toc-number">1.1.4.</span> <span class="toc-text">22. Project Management Concepts</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-P%EF%BC%88%E7%AD%94%E5%87%BA%E6%9D%A5%E5%9B%9B%E4%B8%AAP%EF%BC%89%EF%BC%88people%E3%80%81product%E3%80%81process%E3%80%81project-%E4%BA%BA%E3%80%81%E4%BA%A7%E5%93%81%E3%80%81%E8%BF%87%E7%A8%8B%E3%80%81%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">4 P（答出来四个P）（people、product、process、project)(人、产品、过程、项目)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E5%BA%A6%E9%87%8F"><span class="toc-number">1.1.5.</span> <span class="toc-text">23.度量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-26%E7%AB%A0%EF%BC%9A"><span class="toc-number">1.1.6.</span> <span class="toc-text">24-26章：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/27/%E8%BD%AF%E5%B7%A5%E5%AF%BC%E8%AE%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="软工导论期末复习"><img src="https://img1.baidu.com/it/u=3470134734,1474817501&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=640&amp;h=356" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软工导论期末复习"/></a><div class="content"><a class="title" href="/2022/05/27/%E8%BD%AF%E5%B7%A5%E5%AF%BC%E8%AE%BA%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="软工导论期末复习">软工导论期末复习</a><time datetime="2022-05-27T09:08:28.000Z" title="Created 2022-05-27 17:08:28">2022-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/15/os%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" title="os第三、四章-进程与线程"><img src="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="os第三、四章-进程与线程"/></a><div class="content"><a class="title" href="/2022/05/15/os%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" title="os第三、四章-进程与线程">os第三、四章-进程与线程</a><time datetime="2022-05-15T05:24:50.000Z" title="Created 2022-05-15 13:24:50">2022-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/" title="os第五章-调度"><img src="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="os第五章-调度"/></a><div class="content"><a class="title" href="/2022/05/13/os%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%B0%83%E5%BA%A6/" title="os第五章-调度">os第五章-调度</a><time datetime="2022-05-13T07:56:36.000Z" title="Created 2022-05-13 15:56:36">2022-05-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/12/python%E8%A7%A3%E6%9E%90JSON%E6%96%87%E4%BB%B6/" title="python解析JSON文件"><img src="https://img1.baidu.com/it/u=1807166483,1107331951&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=641&amp;h=401" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python解析JSON文件"/></a><div class="content"><a class="title" href="/2022/05/12/python%E8%A7%A3%E6%9E%90JSON%E6%96%87%E4%BB%B6/" title="python解析JSON文件">python解析JSON文件</a><time datetime="2022-05-12T15:30:22.000Z" title="Created 2022-05-12 23:30:22">2022-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/OS%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%90%8C%E6%AD%A5/" title="OS第六章-同步"><img src="https://static1.makeuseofimages.com/wp-content/uploads/2013/12/linux-of-a-laptop.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS第六章-同步"/></a><div class="content"><a class="title" href="/2022/05/11/OS%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%90%8C%E6%AD%A5/" title="OS第六章-同步">OS第六章-同步</a><time datetime="2022-05-11T02:32:26.000Z" title="Created 2022-05-11 10:32:26">2022-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jasonzzt</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
