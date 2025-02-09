@@ -10,13 +10,13 @@ redirect_from:
 I am currently a first-year Master's student in the [School of Computer Science and Engineering](https://cse.seu.edu.cn/) at [Southeast University](https://www.seu.edu.cn/), specializing in Brain-Computer Interface (BCI), Human-Computer Interaction (HCI), and Human-AI Interaction. I am supervised by [Associate Prof. Zhuying Li](https://zhuyingli.info/) at the [PALM Lab](https://palm.seu.edu.cn/).
 
 ### Education
-- **MSc in Computer Science and Engineering**, School of Computer Science and Engineering,[Southeast University](https://www.seu.edu.cn/), China  
+- **MSc in Computer Science and Engineering**, [Southeast University](https://www.seu.edu.cn/), China  
   2024 - Present
 
-- **BSc in Software Engineering**, School of Computer Science and Engineering, [Southeast University](https://www.seu.edu.cn/), China  
+- **BSc in Software Engineering**, [Southeast University](https://www.seu.edu.cn/), China  
   2020 - 2024
 
-- **Exchange Program in Computer Science**, EECS, [KTH Royal Institute of Technology](https://www.kth.se/en), Sweden  
+- **Exchange Program in Computer Science**, [KTH Royal Institute of Technology](https://www.kth.se/en), Sweden  
   Jan. 2023 - Jun. 2023  
 
 ### Research Interests
