@@ -9,7 +9,7 @@ redirect_from:
 
 I am currently a first-year Master's student in the [School of Computer Science and Engineering](https://cse.seu.edu.cn/) at [Southeast University](https://www.seu.edu.cn/), specializing in Brain-Computer Interface (BCI), Human-Computer Interaction (HCI), and Human-AI Interaction. I am supervised by [Associate Prof. Zhuying Li](https://zhuyingli.info/) at the [PALM Lab](https://palm.seu.edu.cn/).
 
-### Education
+## Education
 - **MSc in Computer Science and Engineering**, [Southeast University](https://www.seu.edu.cn/), China  
   2024 - Present
 
@@ -19,12 +19,12 @@ I am currently a first-year Master's student in the [School of Computer Science 
 - **Exchange Program in Computer Science**, [KTH Royal Institute of Technology](https://www.kth.se/en), Sweden  
   Jan. 2023 - Jun. 2023  
 
-### Research Interests
+## Research Interests
 - Brain-Computer Interface (BCI)
 - Human-Computer Interaction (HCI)
 - Human-AI Interaction
 
-### Internship Experience
+## Internship Experience
 - **AI Frameworks Engineer Intern**, [Intel Corporation](https://www.intel.com/content/www/us/en/homepage.html), Shanghai, China  
   Sep. 2023 - Jun. 2024  
   - Contributed to the development and optimization of [ipex-llm](https://github.com/intel/ipex-llm), an open-source project aimed at improving the performance and efficiency of large language models on Intel GPU, NPU and CPU.
@@ -33,7 +33,7 @@ I am currently a first-year Master's student in the [School of Computer Science 
   Jul. 2023 - Aug. 2023  
   - Worked on streaming media applications and system concurrency optimization.
 
-### Awards and Honors
+## Awards and Honors
 - First-class Postgraduate Scholarship, Southeast University (2024)
 - President’s Scholarship, Southeast University (2021)
 - Huawei Scholarship (2023)
@@ -41,5 +41,5 @@ I am currently a first-year Master's student in the [School of Computer Science 
 - Excellent Student Cadre, Southeast University (2022)
 - Merit Student, Southeast University (2021)
 
-### Publications
+## Publications
 - Upcoming~
