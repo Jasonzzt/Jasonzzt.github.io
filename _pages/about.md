@@ -42,4 +42,4 @@ I am currently a first-year Master's student in the [School of Computer Science 
 - Merit Student, Southeast University (2021)
 
 ## Publications
-- Wu, M., Li, Z., Zhang, Z., Wang, Y.. GreenCompass: Experiencing Urban Pocket Time as Playful Nature Connection through Context-Aware Gamification. CHI 2025 Late-Breaking Work. ACM, New York, NY, USA. 2025.
+- Wu, M., Li, Z., **Zhang, Z.**, Wang, Y.. GreenCompass: Experiencing Urban Pocket Time as Playful Nature Connection through Context-Aware Gamification. CHI 2025 Late-Breaking Work. ACM, New York, NY, USA. 2025.
