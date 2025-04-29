@@ -42,4 +42,4 @@ I am currently a first-year Master's student in the [School of Computer Science 
 - Merit Student, Southeast University (2021)
 
 ## Publications
-- [Mingtao Wu, Zhuying Li, **Ziteng Zhang**, and Yan Wang. 2025. GreenCompass: Experiencing Urban Pocket Time as Playful Nature Connection through Context-Aware Gamification. In Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA '25). Association for Computing Machinery, New York, NY, USA, Article 310, 1–7.](https://doi.org/10.1145/3706599.3719811)
+- Mingtao Wu, Zhuying Li, **Ziteng Zhang**, and Yan Wang. 2025. GreenCompass: Experiencing Urban Pocket Time as Playful Nature Connection through Context-Aware Gamification. In Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA '25). Association for Computing Machinery, New York, NY, USA, Article 310, 1–7.(https://doi.org/10.1145/3706599.3719811)
