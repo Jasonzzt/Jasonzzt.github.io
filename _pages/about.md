@@ -27,10 +27,10 @@ I am currently a second-year Master's student in the [School of Computer Science
 ## Working Experience
 
 - **Tiktok Engineer Intern**, [Bytedance](https://www.bytedance.com/en/), Beijing, China
-  April. 2024 - Today
+  April. 2026 - Today
 
 - **AI Software Intern**, [Intel Corporation](https://www.intel.com/content/www/us/en/homepage.html), Shanghai, China  
-  Nov. 2025 - April. 2024  
+  Nov. 2025 - April. 2026
   
 - **AI Frameworks Engineer Intern**, [Intel Corporation](https://www.intel.com/content/www/us/en/homepage.html), Shanghai, China  
   Sep. 2023 - Jun. 2024  
