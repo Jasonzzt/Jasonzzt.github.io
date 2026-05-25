@@ -20,9 +20,9 @@ I am currently a second-year Master's student in the [School of Computer Science
   Jan. 2023 - Jun. 2023  
 
 ## Research Interests
-- Human-Computer Interaction (HCI)
 - Human-AI Collaboration
-- Brain-Computer Interface (BCI)
+- Human-Computer Interaction (HCI)
+- Multi-Agent System
 
 ##  Experience
 
