@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a second-year Master's student in the [School of Computer Science and Engineering](https://cse.seu.edu.cn/) at [Southeast University](https://www.seu.edu.cn/), specializing in Brain-Computer Interface (BCI), Human-Computer Interaction (HCI), and Human-AI Interaction. I am supervised by [Associate Prof. Zhuying Li](https://zhuyingli.info/) at the [PALM Lab](https://palm.seu.edu.cn/).
+I am currently a second-year Master's student in the [School of Computer Science and Engineering](https://cse.seu.edu.cn/) at [Southeast University](https://www.seu.edu.cn/), specializing in Human-AI Interaction and Multi-Agent System. I am supervised by [Associate Prof. Zhuying Li](https://zhuyingli.info/) at the [PALM Lab](https://palm.seu.edu.cn/).
 
 ## Education
 - **MSc in Computer Science and Engineering**, [Southeast University](https://www.seu.edu.cn/), China  
