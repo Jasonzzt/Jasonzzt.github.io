@@ -62,7 +62,7 @@ My work sits at the intersection of Human-AI Collaboration, Human-Computer Inter
 
 ## Selected Projects
 
-- **[ComfyUI-CacheDiT](https://github.com/Jasonzzt/ComfyUI-CacheDiT)**, 270+ GitHub stars<br>
+- **[ComfyUI-CacheDiT](https://github.com/Jasonzzt/ComfyUI-CacheDiT)**, 280+ GitHub stars<br>
   Jan. 2026 - Feb. 2026
   - Designed a warmup-skip caching strategy for Diffusion Transformer denoising, reusing block-level outputs across adjacent steps to accelerate image and video generation while preserving visual quality.
   - Implemented model-specific caching strategies for LTX-2 dual-latent video/audio generation and Wan2.2 MoE high/low-noise expert pipelines.
