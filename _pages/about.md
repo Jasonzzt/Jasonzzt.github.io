@@ -9,8 +9,6 @@ redirect_from:
 
 I am currently a second-year Master's student in the [School of Computer Science and Engineering](https://cse.seu.edu.cn/) at [Southeast University](https://www.seu.edu.cn/), specializing in Human-AI Interaction and Multi-Agent Systems. I am supervised by [Associate Prof. Zhuying Li](https://zhuyingli.info/) at the [PALM Lab](https://palm.seu.edu.cn/).
 
-My work sits at the intersection of Human-AI Collaboration, Human-Computer Interaction, Multi-Agent Systems, and efficient generative AI infrastructure. I am interested in building AI systems that can reason with people, sense users' cognitive states, and support culturally grounded digital experiences. On the engineering side, I focus on multimodal generation pipelines, efficient inference, XPU acceleration, and agentic platforms.
-
 ## Education
 - **MSc in Computer Science and Engineering**, [Southeast University](https://www.seu.edu.cn/), China<br>
   2024 - 2027 (expected)
