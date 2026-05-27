@@ -29,7 +29,8 @@ I am currently a second-year Master's student in the [School of Computer Science
 
 - **TikTok Engineer Intern**, [ByteDance](https://www.bytedance.com/en/), Beijing, China<br>
   Apr. 2026 - Present
-  - Working on LLM-powered creative asset selection and budget allocation for user growth.
+  - Working on finetuning SEED-1.8 model for creative asset selection for user growth.
+  - Developed and shipped the ad budget allocation system, enabling automated budget distribution across ad campaigns and countries.
   - Building a creative asset manager agent for user growth scenarios, integrating LLM reasoning with tool-based workflows for asset retrieval, analysis, planning, and management.
 
 - **AI Frameworks Engineer Intern**, [Intel Corporation](https://www.intel.com/content/www/us/en/homepage.html), Shanghai, China<br>
